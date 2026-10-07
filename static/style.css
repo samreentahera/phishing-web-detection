@@ -1,0 +1,242 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b
+    );
+    min-height: 100vh;
+    color: #1e293b;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+    padding: 50px 20px;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+    text-align: center;
+    font-size: 34px;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.subtitle {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 35px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #cbd5e1;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    margin-bottom: 15px;
+}
+
+input:focus {
+    border-color: #475569;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #0f172a;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #334155;
+}
+
+.result-card {
+    margin-top: 35px;
+    padding: 25px;
+    border-radius: 15px;
+    background: #f8fafc;
+}
+
+.result-card h2 {
+    margin-bottom: 8px;
+}
+
+.success {
+    color: #16a34a;
+    margin-bottom: 25px;
+}
+
+.result-box {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.result-box h3 {
+    margin-bottom: 10px;
+}
+
+.result {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.ml-safe{
+    color: #15803d;
+}
+
+.ml-note {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.ml-phishing{
+    color: #dc2626;
+}
+
+.risk-section {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.risk-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 12px;
+    gap: 20px;
+}
+
+.progress-bar {
+    height: 12px;
+    background: #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #0f172a;
+    border-radius: 10px;
+}
+
+.reasons {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.reasons h3 {
+    margin-bottom: 15px;
+}
+
+.reasons ul {
+    padding-left: 20px;
+}
+
+.reasons li {
+    margin-bottom: 10px;
+}
+
+.safe-message {
+    background: #ecfdf5;
+    color: #166534;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    color: #cbd5e1;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.risk-low {
+    color: #15803d;
+    font-weight: bold;
+}
+
+.risk-medium {
+    color: #c2410c;
+    font-weight: bold;
+}
+
+.risk-high {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.risk-message {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.low-message {
+    background: #ecfdf5;
+    color: #166534;
+}
+
+.medium-message {
+    background: #fff7ed;
+    color: #9a3412;
+}
+
+.high-message {
+    background: #fef2f2;
+    color: #991b1b;
+}
+
+.primary-note{
+    color: #475569;
+    font-size: 14px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+.risk-title span:last-child {
+    margin-left: 20px;
+}
+
+.risk-value {
+    margin-left: 30px;
+    display: inline-block;
+}

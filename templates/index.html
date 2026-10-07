@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Phishing Website Detector</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card">
+
+            <h1>Phishing Website Detector</h1>
+
+            <p class="subtitle">
+                Analyze a website URL for suspicious characteristics
+            </p>
+
+            <form method="POST">
+
+                <label for="url">
+                    Enter Website URL
+                </label>
+
+                <input
+                    type="text"
+                    id="url"
+                    name="url"
+                    placeholder="https://example.com"
+                    value="{{ url }}"
+                    required
+                >
+
+                <button type="submit">
+                    🔍 Check URL
+                </button>
+
+            </form>
+
+
+            {% if result %}
+
+            <div class="result-card">
+
+                <h2>Security Analysis</h2>
+
+                <p class="success">
+                    Analysis completed successfully
+                </p>
+
+                <p class="primary-note">
+                    Primary assessment based on explainable URL security rules.
+                </p>
+
+                <div class="result-box">
+
+                    <h3>Detection Result</h3>
+
+                    <p class="result">
+                        {{ result }}
+                    </p>
+
+                </div>
+
+
+                <div class="risk-section">
+
+    <div class="risk-title">
+        <span>Risk Score</span>
+        <span class="risk-value">{{ score }}</span>
+    </div>
+
+    <div class="risk-title">
+        <span>Risk Level</span>
+
+        {% if risk_level == "Low" %}
+            <span class="risk-value risk-low">{{ risk_level }}</span>
+
+        {% elif risk_level == "Medium" %}
+            <span class="risk-value risk-medium">{{ risk_level }}</span>
+
+        {% elif risk_level == "High" %}
+            <span class="risk-value risk-high">{{ risk_level }}</span>
+        {% endif %}
+    </div>
+
+    {% if risk_level == "Low" %}
+
+        <p class="risk-message low-message">
+            ✓ No major suspicious indicators were detected.
+        </p>
+
+    {% elif risk_level == "Medium" %}
+
+        <p class="risk-message medium-message">
+            ⚠ Some suspicious indicators were detected.
+        </p>
+
+    {% elif risk_level == "High" %}
+
+        <p class="risk-message high-message">
+            ⚠ Multiple suspicious indicators were detected.
+        </p>
+
+    {% endif %}
+
+</div>
+
+                {% if ml_result %}
+                <div class="result-box">
+                    <h3>Experimental Machine Learning Signal</h3>
+
+                    <p class="ml-note">
+                        This is an experimental machine-learning signal based on URL characteristics.
+                        It should be considered alongside the primary security analysis and not used
+                        as a standalone verdict.
+                    </p>
+
+                    {% if ml_result == "Likely Safe" %}
+                        <p class="result ml-safe">
+                            ✓ {{ ml_result }}
+                        </p>
+                    {% else %}
+                        <p class="result ml-phishing">
+                            ⚠ ML Signal: {{ ml_result }}
+                        </p>
+                     {% endif %}
+
+                    {% if ml_confidence is not none %}
+                    <p>
+                        Confidence:
+                        <strong>{{ ml_confidence }}%</strong>
+                    </p>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+                {% if reasons %}
+
+                <div class="reasons">
+
+                    <h3>Suspicious Characteristics</h3>
+
+                    <ul>
+
+                        {% for reason in reasons %}
+
+                        <li>
+                            {{ reason }}
+                        </li>
+
+                        {% endfor %}
+
+                    </ul>
+
+                </div>
+
+                {% else %}
+
+                <p class="safe-message">
+                    ✓ No suspicious characteristics were detected.
+                </p>
+
+                {% endif %}
+
+            </div>
+
+            {% endif %}
+
+        </div>
+
+        <footer>
+            Educational Cybersecurity Project • URL Analysis System
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
