@@ -1,6 +1,8 @@
-# Phishing Web Detection System
+## Phishing Web Detection System
 
 A web-based phishing URL detection system built using Python, Flask, rule-based security analysis, and machine-learning-assisted URL analysis.
+
+**GitHub Repository:** https://github.com/samreentahera/phishing-web-detection
 
 ## 📌 Project Overview
 
